@@ -10,9 +10,16 @@ export class HeaderService {
   constructor(private httpclient: HttpClient) {
 
    } 
-   postPessoa(pessoa: Pessoa){
-    return this.httpclient.post('http://localhost:8080/pessoas', pessoa)
 
+   private pessoaPost: any;
+
+   postPessoa(pessoa: Pessoa){
+
+    var pessoaRecebePost = this.httpclient.post('https://jsonplaceholder.typicode.com/todos/1', pessoa)
+    pessoaRecebePost.subscribe(value =>{
+      this.pessoaPost = value
+    })
+    return this.pessoaPost;
    }
 
    
