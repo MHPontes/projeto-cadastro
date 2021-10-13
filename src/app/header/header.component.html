@@ -2,32 +2,33 @@
   <div class="container-header">
 
   </div>
-  <div class="container-form">
-    <input class="input" placeholder="digite o nome" id="nomePessoa" value=""/>
-    
+  <form #f="ngForm" (ngSubmit)="onClickPostPessoa(f)">
+    <div class="container-form">
+      <input class="input" placeholder="digite o nome"  value="" name="nome" ngModel />
+      <div class="form-selector">
+        <label >Selecione se é ativo ou não.</label>
+        <select name="ativo" ngModel>
+          <option>Selecione</option>
+          <option value=true>Ativo</option>
+          <option value=false>Inativo</option>
+        </select>
+      </div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Select</mat-label>
-      <mat-select>
-        <mat-option value="one">First option</mat-option>
-        <mat-option value="two">Second option</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Textarea</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field>
+      <div class="container-endereco">
+        <legend>Adicione o seu endereço:</legend>
+        <!-- <input class="input" placeholder="digite o Logradouro"  value="" name="logradouro" ngModel /> -->
+        <input class="input" placeholder="digite o numero"  value="" name="numero" ngModel />
+        <input class="input" placeholder="digite o complemento"  value="" name="complemento" ngModel />
+        <input class="input" placeholder="digite o bairro"  value="" name="bairro" ngModel />
+        <input class="input" placeholder="digite o CEP"  value="" name="cep" ngModel />
+        <input class="input" placeholder="digite o Cidade"  value="" name="cidade" ngModel />
+        <input class="input" placeholder="digite o Estado"  value="" name="estado" ngModel />
 
+      </div>
+      <button type="submit">Cadastrar Pessoa</button>
+    </div>
+  </form>
 
-    <input class="input" placeholder="digite o nome" id="nomePessoa" value=""/>
-    <input class="input" placeholder="digite o nome" id="nomePessoa" value=""/>
-    <input class="input" placeholder="digite o nome" id="nomePessoa" value=""/>
-    <button onclick="onClickPostPessoa(event)">Cadastrar Pessoa</button>
-  </div>
   <div class="container-footer">
 
   </div>

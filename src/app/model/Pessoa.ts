@@ -1,13 +1,15 @@
+import { Endereco } from "./Endereco";
+
 export class Pessoa {
         
         
-        private codigo?: any;
+        public codigo?: any;
         
-        private nome?: String;
+        public nome?: String;
         
-        private ativo?: boolean;
+        public ativo?: boolean;
         
-        private endereco?: any;
+        public endereco?: Endereco;
         
 
 }
